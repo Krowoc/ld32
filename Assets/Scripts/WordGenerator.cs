@@ -12,12 +12,53 @@ public class WordGenerator : MonoBehaviour {
 
 	public float spawnSpeed = 3.0f;
 
+	public float niceWordsGain = 1;
+
+	public float positiveWordsGain = 0.5f;
+
+	public float meanWordsDamage = -1f;
+
+	public float negativeWordsDamage   = 0.5f;
+
+	private string[] niceWords  = new string[] {"Beautiful", "Charming", "Invaluable", "Gorgeous",
+		                                        "Courageous", "Outspoken", "Driven", "Intelligent",
+		                                        "Upbeat", "Grateful"};
+	private string[] poitiveWords = new string[] { "Kind", "Caring", "Smart", "Funny", "Important",
+		                                           "Determined", "Thoughtful", "Well-rounded", 
+		                                           "Pleasant"};
+	private string[] meanWords = new string[] {"Uncaring", "Narissitic", "Annoying", "Stupid",
+	                                           "Forgetful", "Unsightly", "Unpleasant", 
+	                                           "The Worst", "A Mistake", "Un-Grateful",
+	                                           "Pitiful", "Horrible", "A disappointment", 
+		                                       "Needy"};
+	private string[] negativeWords = new string[] {"Mean", "Dumb", "Ugly", "Boring", "Lazy",
+		                                         "Smelly"};
+
+
 	// Use this for initialization
 	void Start () 
 	{
 		wordList = new Dictionary<string, float>();
-		wordList.Add ("Good", 1.0f);
-		wordList.Add ("Bad", -1.0f);
+
+		for (int i = 0; i < niceWords.Length; i++) 
+		{
+		  wordList.Add (niceWords[i], niceWordsGain);
+		}
+
+		for (int i = 0; i < poitiveWords.Length; i++) 
+		{
+			wordList.Add (poitiveWords[i], positiveWordsGain);
+		}
+
+		for (int i = 0; i < meanWords.Length; i++) 
+		{
+			wordList.Add (meanWords[i], meanWordsDamage);
+		}
+
+		for (int i = 0; i < negativeWords.Length; i++) 
+		{
+			wordList.Add (negativeWords[i], negativeWordsDamage);
+		}
 
 		StartCoroutine ("SpawnWord");
 	}
