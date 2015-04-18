@@ -228,9 +228,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mood: 0
-  jumpForce: 3
+  jumpForce: 2.79999995
   currentJumpForce: 0
-  gravity: .100000001
+  gravity: .0500000007
   jumping: 0
   groundPosition: 0
   animator: {fileID: 0}
@@ -375,7 +375,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   groundHeight: .379999995
-  movementSpeed: .5
+  movementSpeed: .699999988
   spawnSpeed: 3
 --- !u!1 &1875372865
 GameObject:

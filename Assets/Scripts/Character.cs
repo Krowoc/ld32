@@ -4,12 +4,14 @@ using System.Collections;
 public class Character : MonoBehaviour {
 
 	public float mood;
+	public float maxMood;
+	public float minMood;
 
 	public float jumpForce = 1.0f;
 	public float currentJumpForce;
 	public float gravity = -0.3f;
-	public bool jumping = false;
 	public float groundPosition;
+	public bool jumping = false;
 
 	public Animator animator;
 
@@ -28,31 +30,28 @@ public class Character : MonoBehaviour {
 			StartCoroutine ("Jump");
 		}
 
-		if(Input.GetKey (KeyCode.T))
-		{
-			Debug.Log ("Test");
-			mood = -1.0f;
-		}
-		//else
-		//	mood = 0.0f;
-
-
 		animator.SetFloat ("Mood", mood);
+		animator.SetBool ("Jumping", jumping);
 	}
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		Debug.Log ("Hit!");
-
 		WordObject wo = other.GetComponent<WordObject>();
 		if(wo != null)
 		{
 			mood += wo.damage;
 		}
+
+		wo.Remove ();
 	}
 
 	IEnumerator Jump()
 	{
+		//If already jumping, break
+		if (transform.position.y > groundPosition)
+			yield break;
+
+		jumping = true;
 		currentJumpForce = jumpForce;
 
 		Vector3 pos = transform.position;
@@ -78,6 +77,7 @@ public class Character : MonoBehaviour {
 				transform.position = new Vector3(transform.position.x, groundPosition);
 		}
 
+		jumping = false;
 	}
 
 

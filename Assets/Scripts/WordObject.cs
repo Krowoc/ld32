@@ -52,4 +52,25 @@ public class WordObject : MonoBehaviour {
 	{
 		GameObject.Destroy (gameObject);
 	}
+
+	public void Remove()
+	{
+		StartCoroutine ("FadeOut");
+	}
+
+	IEnumerator FadeOut()
+	{
+		float fadeSpeed = 0.08f;
+		MeshRenderer mr = GetComponent<MeshRenderer>();
+		Color c = mr.material.color;
+
+		while (c.a > 0)
+		{
+			c = new Color(c.r, c.g, c.b, c.a -= fadeSpeed);
+			mr.material.color = c;
+
+			yield return null;
+		}
+		GameObject.Destroy (gameObject);
+	}
 }
