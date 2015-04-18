@@ -228,11 +228,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mood: 0
+  maxMood: 3
+  minMood: -3
   jumpForce: 2.79999995
   currentJumpForce: 0
   gravity: .0500000007
-  jumping: 0
   groundPosition: 0
+  jumping: 0
   animator: {fileID: 0}
 --- !u!61 &886813631
 BoxCollider2D:
@@ -374,7 +376,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 822edb7923e4aa4429e07e460739a684, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  groundHeight: .379999995
+  wordHeightMax: .579999983
+  wordHeightMin: .379999995
   movementSpeed: .699999988
   spawnSpeed: 3
 --- !u!1 &1875372865

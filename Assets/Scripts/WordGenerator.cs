@@ -6,7 +6,8 @@ public class WordGenerator : MonoBehaviour {
 
 	public Dictionary<string,float> wordList;
 
-	public float groundHeight = 0.5f;
+	public float wordHeightMax = 0.58f;
+	public float wordHeightMin = 0.38f;
 
 	public float movementSpeed = 0.2f;
 
@@ -60,7 +61,9 @@ public class WordGenerator : MonoBehaviour {
 			wordList.Add (negativeWords[i], negativeWordsDamage);
 		}
 
+
 		StartCoroutine ("SpawnWord");
+
 	}
 	
 	// Update is called once per frame
@@ -73,15 +76,10 @@ public class WordGenerator : MonoBehaviour {
 	{
 		while(true)
 		{
+			//Pick a random word
 			List<string> keyList = new List<string>(wordList.Keys);
-
-			//Random rand = new Random();
 			int rand = Mathf.FloorToInt (Random.Range(0, keyList.Count));
 			string w = keyList[rand];
-			//float d = wordList[w];
-			//Debug.Log (rand);
-			//KeyValuePair<string, float> w = wordList.ElementAt(rand);
-			//string w = wordList[rand];
 
 			GameObject wordGO = Instantiate (Resources.Load<GameObject>("Word")) as GameObject;
 
@@ -89,7 +87,9 @@ public class WordGenerator : MonoBehaviour {
 
 			word.SetMovementVector (new Vector3(-movementSpeed, 0.0f));
 			word.SetWord(w, wordList[w]);
-			word.transform.position = Camera.main.ScreenToWorldPoint( new Vector3(Screen.width, Screen.height * groundHeight, -Camera.main.transform.position.z) );
+
+			float randHeight = Random.Range (wordHeightMin, wordHeightMax);
+			word.transform.position = Camera.main.ScreenToWorldPoint( new Vector3(Screen.width, Screen.height * randHeight, -Camera.main.transform.position.z) );
 
 			yield return new WaitForSeconds(spawnSpeed);
 		}
