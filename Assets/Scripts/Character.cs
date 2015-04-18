@@ -40,6 +40,7 @@ public class Character : MonoBehaviour {
 		if(wo != null)
 		{
 			mood += wo.damage;
+			mood = Mathf.Clamp (mood, minMood, maxMood);
 		}
 
 		wo.Remove ();
