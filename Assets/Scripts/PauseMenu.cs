@@ -2,10 +2,9 @@
 using System.Collections;
 public class PauseMenu : MonoBehaviour
 {
-	public Sprite pauseMenuSprite;
-	public Font pauseMenuFont;
+
+	public Canvas pauseMenu;
 	private bool pauseEnabled = false;	
-	private bool showOptionsDropDown = false;
 
    void Start()
    {
@@ -13,6 +12,8 @@ public class PauseMenu : MonoBehaviour
 	Time.timeScale = 1;
 	AudioListener.volume = 1;
 	UnityEngine.Cursor.visible = false;
+	pauseMenu = pauseMenu.GetComponent<Canvas> ();
+	pauseMenu.enabled = false;
    }
 
    void Update()
@@ -27,6 +28,7 @@ public class PauseMenu : MonoBehaviour
 		{
 			//unpause the game
 			pauseEnabled = false;
+			pauseMenu.enabled = false;
 			Time.timeScale = 1;
 			AudioListener.volume = 1;
 			UnityEngine.Cursor.visible = false;			
@@ -36,16 +38,18 @@ public class PauseMenu : MonoBehaviour
 		else if(pauseEnabled == false)
 		{
 			pauseEnabled = true;
+			pauseMenu.enabled = true;
 			AudioListener.volume = 0;
-			Time.timeScale = 0;
+			Time.timeScale = 0.001f;
 			UnityEngine.Cursor.visible = true;
 		}
 	}
   }
 
 
-  void OnGUI()
- {
-	
- }
+	public void MainMenu()
+	{
+		Time.timeScale = 1;
+		Application.LoadLevel(0);
+	}
 }

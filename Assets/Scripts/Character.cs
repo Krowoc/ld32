@@ -25,10 +25,13 @@ public class Character : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		if(Input.GetButtonDown("Jump"))
-		{
-			StartCoroutine ("Jump");
-		}
+		if(Time.timeScale == 0.001f)
+			return;
+		else
+			if(Input.GetButtonDown("Jump"))
+			{
+				StartCoroutine ("Jump");
+			}
 
 		animator.SetFloat ("Mood", mood);
 		animator.SetBool ("Jumping", jumping);

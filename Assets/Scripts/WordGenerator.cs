@@ -91,29 +91,34 @@ public class WordGenerator : MonoBehaviour {
 
 	IEnumerator SpawnWord() 
 	{
-		while(true)
-		{
-			int rand = Mathf.FloorToInt (UnityEngine.Random.Range(0, wordList.Count));
-			//string w = wordList[rand];
 
-			//Pick a random word
-			/*List<string> keyList = new List<string>(wordList.Keys);
-			int rand = Mathf.FloorToInt (Random.Range(0, keyList.Count));
-			string w = keyList[rand];
-			*/
+		if(Time.timeScale == 0.001f)
+			yield return null;
+		else
 
-			GameObject wordGO = Instantiate (Resources.Load<GameObject>("Word")) as GameObject;
+			while(true)
+			{
+				int rand = Mathf.FloorToInt (UnityEngine.Random.Range(0, wordList.Count));
+				//string w = wordList[rand];
 
-			WordObject word = wordGO.GetComponent<WordObject>();
+				//Pick a random word
+				/*List<string> keyList = new List<string>(wordList.Keys);
+				int rand = Mathf.FloorToInt (Random.Range(0, keyList.Count));
+				string w = keyList[rand];
+				*/
 
-			word.SetMovementVector (new Vector3(-movementSpeed, 0.0f));
-			word.SetWord(wordList[rand].word, wordList[rand].damage);
+				GameObject wordGO = Instantiate (Resources.Load<GameObject>("Word")) as GameObject;
 
-			float randHeight = UnityEngine.Random.Range (wordHeightMin, wordHeightMax);
-			word.transform.position = Camera.main.ScreenToWorldPoint( new Vector3(Screen.width, Screen.height * randHeight, -Camera.main.transform.position.z) );
+				WordObject word = wordGO.GetComponent<WordObject>();
 
-			yield return new WaitForSeconds(spawnSpeed);
-		}
+				word.SetMovementVector (new Vector3(-movementSpeed, 0.0f));
+				word.SetWord(wordList[rand].word, wordList[rand].damage);
+
+				float randHeight = UnityEngine.Random.Range (wordHeightMin, wordHeightMax);
+				word.transform.position = Camera.main.ScreenToWorldPoint( new Vector3(Screen.width, Screen.height * randHeight, -Camera.main.transform.position.z) );
+
+				yield return new WaitForSeconds(spawnSpeed);
+			}
 	}
 
 

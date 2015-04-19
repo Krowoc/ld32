@@ -21,7 +21,10 @@ public class WordObject : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
 	{
-		transform.position += MovementVector;
+		if(Time.timeScale == 0.001f)
+			return;
+		else
+			transform.position += MovementVector;
 
 
 	}
@@ -45,7 +48,7 @@ public class WordObject : MonoBehaviour {
 
 	public void SetMovementVector(Vector3 v3)
 	{
-		MovementVector = v3;
+			MovementVector = v3;
 	}
 
 	void OnBecameInvisible() 
