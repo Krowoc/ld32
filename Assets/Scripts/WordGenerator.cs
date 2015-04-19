@@ -44,7 +44,7 @@ public class WordGenerator : MonoBehaviour {
 	IEnumerator SpawnWord() 
 	{
 
-		if(Time.timeScale == 0.001f)
+		if(Time.timeScale == 0.0000001f)
 			yield return null;
 		else
 

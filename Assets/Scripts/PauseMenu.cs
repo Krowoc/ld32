@@ -40,7 +40,7 @@ public class PauseMenu : MonoBehaviour
 			pauseEnabled = true;
 			pauseMenu.enabled = true;
 			AudioListener.volume = 0;
-			Time.timeScale = 0.001f;
+			Time.timeScale = 0.0000001f;
 			UnityEngine.Cursor.visible = true;
 		}
 	}

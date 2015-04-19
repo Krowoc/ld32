@@ -23,12 +23,8 @@ public class WordObject : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
 	{
-		if(Time.timeScale == 0.001f)
-			return;
-		else
-			transform.position += MovementVector;
-
-
+			transform.position += MovementVector * Time.timeScale;
+		
 	}
 	public void SetWord(string word, float damage, string power)
 	{
