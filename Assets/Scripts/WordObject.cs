@@ -7,6 +7,8 @@ public class WordObject : MonoBehaviour {
 
 	public float damage;
 
+	public string power;
+
 	public Vector3 MovementVector;
 
 	public TextMesh textMesh;
@@ -28,10 +30,11 @@ public class WordObject : MonoBehaviour {
 
 
 	}
-	public void SetWord(string word, float damage)
+	public void SetWord(string word, float damage, string power)
 	{
 		this.word = word;
 		this.damage = damage;
+		this.power = power;
 
 		textMesh = GetComponent<TextMesh>();
 		textMesh.text = word;

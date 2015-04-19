@@ -53,15 +53,15 @@ public class WordGenerator : MonoBehaviour {
 				int rand = Mathf.FloorToInt (UnityEngine.Random.Range(0, wordList.Count));
 				
 				GameObject wordGO = Instantiate (Resources.Load<GameObject>("Word")) as GameObject;
-
+				
 				WordObject word = wordGO.GetComponent<WordObject>();
-
+				
 				word.SetMovementVector (new Vector3(-movementSpeed, 0.0f));
-				word.SetWord(wordList[rand].word, wordList[rand].damage);
-
+				word.SetWord(wordList[rand].word, wordList[rand].damage, wordList[rand].power);
+				
 				float randHeight = UnityEngine.Random.Range (wordHeightMin, wordHeightMax);
 				word.transform.position = Camera.main.ScreenToWorldPoint( new Vector3(Screen.width, Screen.height * randHeight, -Camera.main.transform.position.z) );
-
+				
 				yield return new WaitForSeconds(spawnSpeed);
 			}
 	}
