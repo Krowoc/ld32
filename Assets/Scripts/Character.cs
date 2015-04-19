@@ -25,7 +25,7 @@ public class Character : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		if(Time.timeScale == 0.001f)
+		if(Time.timeScale == 0.0000001f)
 			return;
 		else
 			if(Input.GetButtonDown("Jump"))
