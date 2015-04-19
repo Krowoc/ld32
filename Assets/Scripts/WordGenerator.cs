@@ -1,10 +1,15 @@
 ﻿using UnityEngine;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 
 public class WordGenerator : MonoBehaviour {
 
-	public Dictionary<string,float> wordList;
+	public TextAsset wordFile;
+
+	public List<Words> wordList;
+
+	//public Dictionary<string,float> wordList;
 
 	public float wordHeightMax = 0.58f;
 	public float wordHeightMin = 0.38f;
@@ -13,7 +18,7 @@ public class WordGenerator : MonoBehaviour {
 
 	public float spawnSpeed = 3.0f;
 
-	public float niceWordsGain = 1;
+	/*public float niceWordsGain = 1;
 
 	public float positiveWordsGain = 0.5f;
 
@@ -33,15 +38,27 @@ public class WordGenerator : MonoBehaviour {
 	                                           "Pitiful", "Horrible", "A disappointment", 
 		                                       "Needy"};
 	private string[] negativeWords = new string[] {"Mean", "Dumb", "Ugly", "Boring", "Lazy",
-		                                         "Smelly"};
+		                                         "Smelly"};*/
 
 
 	// Use this for initialization
 	void Start () 
 	{
-		wordList = new Dictionary<string, float>();
+		wordList = new List<Words>();
 
-		for (int i = 0; i < niceWords.Length; i++) 
+		string[] lineArray = wordFile.text.Split(new string[] { "\r\n", "\n" }, System.StringSplitOptions.None);//","[0]);
+
+		for(int i = 1; i < lineArray.Length; i++)
+		{
+			string[] wordArray = lineArray[i].Split (new string[] { "," }, System.StringSplitOptions.None);
+
+			wordList.Add (new Words(wordArray[0], float.Parse (wordArray[1]), wordArray[2], Int32.Parse (wordArray[3])));
+		}
+
+
+		//wordList = new Dictionary<string, float>();
+
+		/*for (int i = 0; i < niceWords.Length; i++) 
 		{
 		  wordList.Add (niceWords[i], niceWordsGain);
 		}
@@ -59,7 +76,7 @@ public class WordGenerator : MonoBehaviour {
 		for (int i = 0; i < negativeWords.Length; i++) 
 		{
 			wordList.Add (negativeWords[i], negativeWordsDamage);
-		}
+		}*/
 
 
 		StartCoroutine ("SpawnWord");
@@ -76,19 +93,23 @@ public class WordGenerator : MonoBehaviour {
 	{
 		while(true)
 		{
+			int rand = Mathf.FloorToInt (UnityEngine.Random.Range(0, wordList.Count));
+			//string w = wordList[rand];
+
 			//Pick a random word
-			List<string> keyList = new List<string>(wordList.Keys);
+			/*List<string> keyList = new List<string>(wordList.Keys);
 			int rand = Mathf.FloorToInt (Random.Range(0, keyList.Count));
 			string w = keyList[rand];
+			*/
 
 			GameObject wordGO = Instantiate (Resources.Load<GameObject>("Word")) as GameObject;
 
 			WordObject word = wordGO.GetComponent<WordObject>();
 
 			word.SetMovementVector (new Vector3(-movementSpeed, 0.0f));
-			word.SetWord(w, wordList[w]);
+			word.SetWord(wordList[rand].word, wordList[rand].damage);
 
-			float randHeight = Random.Range (wordHeightMin, wordHeightMax);
+			float randHeight = UnityEngine.Random.Range (wordHeightMin, wordHeightMax);
 			word.transform.position = Camera.main.ScreenToWorldPoint( new Vector3(Screen.width, Screen.height * randHeight, -Camera.main.transform.position.z) );
 
 			yield return new WaitForSeconds(spawnSpeed);
