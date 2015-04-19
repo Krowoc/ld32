@@ -69,11 +69,11 @@ public class Character : MonoBehaviour {
 		{
 			yield return null;
 
-			currentJumpForce -= gravity;
+			currentJumpForce -= gravity * Time.timeScale;
 
 			Vector3 pos2 = transform.position;
 
-			pos2 += new Vector3(0.0f, currentJumpForce);
+			pos2 += new Vector3(0.0f, currentJumpForce) * Time.timeScale;
 
 			transform.position = pos2;
 
