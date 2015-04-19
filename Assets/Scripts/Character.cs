@@ -31,12 +31,11 @@ public class Character : MonoBehaviour {
 
 		if(Input.GetButtonDown("Jump"))
 		{
-			if(rolling == false)
+			if(jumping == false && rolling == false)
 			{
 				StartCoroutine ("Jump");
 			}
 		}
-
 		if(Input.GetAxis ("Vertical") < 0)
 		{
 			if(jumping == false)
@@ -73,8 +72,8 @@ public class Character : MonoBehaviour {
 	IEnumerator Jump()
 	{
 		//If already jumping, break
-		if (transform.position.y > groundPosition)
-			yield break;
+		//if (transform.position.y > groundPosition)
+		//	yield break;
 
 		jumping = true;
 		currentJumpForce = jumpForce;

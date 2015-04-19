@@ -31,10 +31,10 @@ public class WordGenerator : MonoBehaviour {
 	{
 		levelList = new List<Level>();
 
-		levelList.Add (new Level(ParseWordFile(level0File), 0.8f, 3.0f, 30f));
-		levelList.Add (new Level(ParseWordFile(level1File), 0.9f, 2.5f, 30f));
-		levelList.Add (new Level(ParseWordFile(level2File), 1.0f, 2.0f, 30f));
-		levelList.Add (new Level(ParseWordFile(level3File), 1.1f, 1.5f, 30f));
+		levelList.Add (new Level(ParseWordFile(level0File), 0.9f, 3.0f, 10.0f));
+		levelList.Add (new Level(ParseWordFile(level1File), 1.2f, 2.5f, 10.0f));
+		levelList.Add (new Level(ParseWordFile(level2File), 1.5f, 2.0f, 10.0f));
+		levelList.Add (new Level(ParseWordFile(level3File), 1.8f, 1.0f, 10.0f));
 
 		currentLevel = levelList[0];
 
@@ -64,14 +64,16 @@ public class WordGenerator : MonoBehaviour {
 			
 			float randHeight = UnityEngine.Random.Range (wordHeightMin, wordHeightMax);
 			word.transform.position = Camera.main.ScreenToWorldPoint( new Vector3(Screen.width, Screen.height * randHeight, -Camera.main.transform.position.z) );
-			
-			yield return new WaitForSeconds(currentLevel.spawnSpeed);
+
+			float randTime = UnityEngine.Random.Range (-1.0f, 1.0f);
+
+			yield return new WaitForSeconds(currentLevel.spawnSpeed + randTime);
 		}
 	}
 
 	IEnumerator ChangeLevel()
 	{
-		for (level = 0; level < maxLevel; level++)
+		for (level = 0; level <= maxLevel; level++)
 		{
 			Debug.Log ("Level" + level.ToString ());
 			currentLevel = levelList[level];
