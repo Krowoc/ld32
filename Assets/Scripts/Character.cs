@@ -11,6 +11,7 @@ public class Character : MonoBehaviour {
 	public float currentJumpForce;
 	public float gravity = -0.3f;
 	public float groundPosition;
+	public bool rolling = false;
 	public bool jumping = false;
 
 	public Animator animator;
@@ -27,11 +28,25 @@ public class Character : MonoBehaviour {
 	{
 		if(Time.timeScale == 0.0000001f)
 			return;
-		else
-			if(Input.GetButtonDown("Jump"))
+
+		if(Input.GetButtonDown("Jump"))
+		{
+			if(rolling == false)
 			{
 				StartCoroutine ("Jump");
 			}
+		}
+
+		if(Input.GetAxis ("Vertical") < 0)
+		{
+			if(jumping == false)
+			{
+				rolling = true;
+				animator.SetBool ("Rolling", true);
+			}
+		}
+		else 
+			animator.SetBool("Rolling", false);
 
 		animator.SetFloat ("Mood", mood);
 		animator.SetBool ("Jumping", jumping);
@@ -47,6 +62,12 @@ public class Character : MonoBehaviour {
 		}
 
 		wo.Remove ();
+	}
+
+	//Called from animation when it ends
+	public void FinishRolling()
+	{
+		rolling = false;
 	}
 
 	IEnumerator Jump()
