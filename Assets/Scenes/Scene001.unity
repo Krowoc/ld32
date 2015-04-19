@@ -275,6 +275,7 @@ MonoBehaviour:
   currentJumpForce: 0
   gravity: .0500000007
   groundPosition: 0
+  rolling: 0
   jumping: 0
   animator: {fileID: 0}
 --- !u!50 &886813632
@@ -787,11 +788,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 822edb7923e4aa4429e07e460739a684, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wordFile: {fileID: 4900000, guid: 3aedf0a05bbba1444b8987094ec37b84, type: 3}
+  level0File: {fileID: 4900000, guid: 620827683f1e2404eb2a5fc5b659ffff, type: 3}
+  level1File: {fileID: 4900000, guid: cc0b8f6740bd63946a35b57c1cc3344c, type: 3}
+  level2File: {fileID: 4900000, guid: 620827683f1e2404eb2a5fc5b659ffff, type: 3}
+  level3File: {fileID: 4900000, guid: cc0b8f6740bd63946a35b57c1cc3344c, type: 3}
   wordHeightMax: .579999983
   wordHeightMin: .379999995
-  movementSpeed: .699999988
-  spawnSpeed: 3
+  level: 0
+  maxLevel: 3
 --- !u!1 &1828848862
 GameObject:
   m_ObjectHideFlags: 0

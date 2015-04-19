@@ -1,0 +1,21 @@
+word,damage,power,level
+Gorgeous,1,none,1
+Thoughtful,0.5,none,1
+Courageous,1,none,1
+Outspoken,1,none,1
+Driven,1,none,1
+Intelligent,1,none,1
+Well-rounded,0.5,none,1
+Upbeat,1,none,1
+Optimistic,1,none,1
+Pleasant,0.5,none,1
+Grateful,1,none,1
+Unpleasant,-1,none,1
+The Worst,-1,none,1
+A Mistake,-1,none,1
+Ungrateful,-1,none,1
+Pitiful,-1,none,1
+Horrible,-1,none,1
+A disappointment,-1,none,1
+Smelly,-0.5,none,1
+Needy,-1,none,1
