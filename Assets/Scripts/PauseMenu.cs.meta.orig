@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+guid: 82814bb53f3d14f3694d433354413a03
+timeCreated: 1429413096
+=======
 guid: 86b5bf28e9439f046a02299353b25adc
 timeCreated: 1429413777
+>>>>>>> AdamBranch001
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
