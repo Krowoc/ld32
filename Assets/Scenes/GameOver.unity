@@ -275,8 +275,8 @@ RectTransform:
   m_RootOrder: 6
   m_AnchorMin: {x: 1, y: .5}
   m_AnchorMax: {x: 1, y: .5}
-  m_AnchoredPosition: {x: -204, y: -73}
-  m_SizeDelta: {x: 350, y: 249}
+  m_AnchoredPosition: {x: -180, y: -53}
+  m_SizeDelta: {x: 320, y: 288}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &235652036
 MonoBehaviour:
@@ -293,12 +293,12 @@ MonoBehaviour:
   m_Color: {r: .196078435, g: .196078435, b: .196078435, a: 1}
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 12
+    m_FontSize: 10
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 3
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
@@ -1102,8 +1102,8 @@ RectTransform:
   m_RootOrder: 5
   m_AnchorMin: {x: 0, y: .5}
   m_AnchorMax: {x: 0, y: .5}
-  m_AnchoredPosition: {x: 281.5, y: -73}
-  m_SizeDelta: {x: 331, y: 261.299988}
+  m_AnchoredPosition: {x: 297.799988, y: -69.4000015}
+  m_SizeDelta: {x: 363.5, y: 261.299988}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1917128118
 MonoBehaviour:
@@ -1132,7 +1132,7 @@ MonoBehaviour:
     m_LineSpacing: 1.22000003
   m_Text: 'Created by Krowoc Studios
 
-    Frederick MD, USA
+    https://www.facebook.com/krowocstudios
 
 
     Adam Silcott - Lead Programmer
