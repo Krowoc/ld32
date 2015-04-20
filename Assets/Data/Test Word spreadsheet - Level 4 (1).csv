@@ -1,0 +1,26 @@
+word,damage,power,level
+Addict,-1,,4
+Dead,-1,,4
+Decrepit,-1,,4
+Empty,-1,,4
+Give up,-1,,4
+Go Away,-1,,4
+Hopeless,-1,,4
+Insubstantial,-1,,4
+Loser,-1,,4
+Nothing,-1,,4
+Pointless,-1,,4
+Ruthless,-1,,4
+Surrender,-1,,4
+Twisted,-1,,4
+Useless,-1,,4
+Vicious,-1,,4
+Violent,-1,,4
+Wicked,-1,,4
+Worthless,-1,,4
+Gullible,-0.5,,4
+Hollow,-0.5,,4
+Ugly,-0.5,,4
+Gnarly,0.5,,4
+Victorious,1,,4
+Worthy,1,,4
