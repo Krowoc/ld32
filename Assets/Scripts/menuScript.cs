@@ -42,7 +42,7 @@ public class menuScript : MonoBehaviour {
 
 	public void StartLevel()
 	{
-		Application.LoadLevel (1);
+		Application.LoadLevel ("Scene001");
 
 	}
 	public void QuitGame()

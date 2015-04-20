@@ -6,6 +6,7 @@ public class Character : MonoBehaviour {
 	public float mood;
 	public float maxMood;
 	public float minMood;
+	public bool failed = false;
 
 	public float jumpForce = 1.0f;
 	public float currentJumpForce;
@@ -16,17 +17,28 @@ public class Character : MonoBehaviour {
 
 	public Animator animator;
 
+	public AudioSource music;
+
+	public float musicNormal = 1.0f;
+	public float musicSlow = 0.75f;
+	public float musicTransitionSpeed = 2.0f;
+
 	// Use this for initialization
 	void Start () {
 		animator = GetComponent<Animator>();
 
 		groundPosition = transform.position.y;
+
+		music = GameObject.Find ("AudioSource").GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
 		if(Time.timeScale == 0.0000001f)
+			return;
+
+		if(failed)
 			return;
 
 		if(Input.GetButtonDown("Jump"))
@@ -49,6 +61,15 @@ public class Character : MonoBehaviour {
 
 		animator.SetFloat ("Mood", mood);
 		animator.SetBool ("Jumping", jumping);
+
+		if(mood < -2.0f)
+		{
+			music.pitch = Mathf.Lerp(music.pitch, musicSlow, musicTransitionSpeed * Time.deltaTime);
+		}
+		else
+		{
+			music.pitch = Mathf.Lerp(music.pitch, musicNormal, musicTransitionSpeed * Time.deltaTime);
+		}
 	}
 
 	void OnTriggerEnter2D(Collider2D other)
@@ -61,6 +82,11 @@ public class Character : MonoBehaviour {
 		}
 
 		wo.Remove ();
+
+		if(mood < -3.0f)
+		{
+			StartCoroutine ("Fail");
+		}
 	}
 
 	//Called from animation when it ends
@@ -105,4 +131,13 @@ public class Character : MonoBehaviour {
 	}
 
 
+	IEnumerator Fail()
+	{
+		failed = true;
+		animator.SetBool ("Failed", failed);
+
+		yield return new WaitForSeconds(3.0f);
+
+		Application.LoadLevel("GameOver");
+	}
 }
