@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 public class WordGenerator : MonoBehaviour {
 
-	public int playerScore = 0;
+	//public float playerScore = 0;
 
 	public TextAsset level0File;
 	public TextAsset level1File;
@@ -41,6 +41,8 @@ public class WordGenerator : MonoBehaviour {
 
 		currentLevel = levelList[0];
 
+		Globals.playerScore = 0.0f;
+
 		StartCoroutine ("SpawnWord");
 		StartCoroutine ("ChangeLevel");
 	}
@@ -67,6 +69,10 @@ public class WordGenerator : MonoBehaviour {
 			
 			float randHeight = UnityEngine.Random.Range (wordHeightMin, wordHeightMax);
 			word.transform.position = Camera.main.ScreenToWorldPoint( new Vector3(Screen.width, Screen.height * randHeight, -Camera.main.transform.position.z) );
+
+			//Score
+			if(word.damage < 0.0f)
+				Globals.playerScore += -word.damage;
 
 			float randTime = UnityEngine.Random.Range (-1.0f, 1.0f);
 
