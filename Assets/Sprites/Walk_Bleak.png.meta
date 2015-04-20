@@ -1,22 +1,20 @@
 fileFormatVersion: 2
-guid: b1d0c66c942ad5e469df87d74ec155b8
-timeCreated: 1429486589
+guid: 10cdaafeed4f21b4aa29d5b120655a11
+timeCreated: 1429537089
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Jump_0
-    21300002: Jump_1
-    21300004: Jump_2
-    21300006: Jump_3
-    21300008: Jump_4
-    21300010: Jump_5
-    21300012: Jump_6
-    21300014: Jump_7
-    21300016: Jump_8
+    21300000: Walk_Bleak_0
+    21300002: Walk_Bleak_1
+    21300004: Walk_Bleak_2
+    21300006: Walk_Bleak_3
+    21300008: Walk_Bleak_4
+    21300010: Walk_Bleak_5
+    21300012: Walk_Bleak_6
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 0
+    enableMipMap: 1
     linearTexture: 0
     correctGamma: 0
     fadeOut: 0
@@ -58,7 +56,7 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: Jump_0
+    - name: Walk_Bleak_0
       rect:
         serializedVersion: 2
         x: 0
@@ -68,7 +66,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Jump_1
+    - name: Walk_Bleak_1
       rect:
         serializedVersion: 2
         x: 320
@@ -78,7 +76,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Jump_2
+    - name: Walk_Bleak_2
       rect:
         serializedVersion: 2
         x: 640
@@ -88,7 +86,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Jump_3
+    - name: Walk_Bleak_3
       rect:
         serializedVersion: 2
         x: 960
@@ -98,7 +96,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Jump_4
+    - name: Walk_Bleak_4
       rect:
         serializedVersion: 2
         x: 1280
@@ -108,7 +106,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Jump_5
+    - name: Walk_Bleak_5
       rect:
         serializedVersion: 2
         x: 1600
@@ -118,30 +116,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Jump_6
+    - name: Walk_Bleak_6
       rect:
         serializedVersion: 2
         x: 1920
-        y: 0
-        width: 320
-        height: 700
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Jump_7
-      rect:
-        serializedVersion: 2
-        x: 2240
-        y: 0
-        width: 320
-        height: 700
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Jump_8
-      rect:
-        serializedVersion: 2
-        x: 2560
         y: 0
         width: 320
         height: 700

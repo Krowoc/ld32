@@ -12,9 +12,63 @@ AnimationClip:
   m_UseHighQualityCurve: 1
   m_RotationCurves: []
   m_CompressedRotationCurves: []
-  m_PositionCurves: []
+  m_PositionCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: -10, y: 3.9000001, z: 0}
+        inSlope: {x: 115.200005, y: 170.400009, z: 0}
+        outSlope: {x: 115.200005, y: 170.400009, z: 0}
+        tangentMode: 0
+      - time: .0833333358
+        value: {x: -.400000006, y: 18.1000004, z: 0}
+        inSlope: {x: 115.200005, y: 170.400009, z: 0}
+        outSlope: {x: 115.200005, y: 170.400009, z: 0}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    path: Collider1
   m_ScaleCurves: []
-  m_FloatCurves: []
+  m_FloatCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: -10.4239244
+        inSlope: 86.5982285
+        outSlope: 86.5982285
+        tangentMode: 10
+      - time: .0833333358
+        value: -3.20740509
+        inSlope: 86.5982285
+        outSlope: 86.5982285
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    attribute: m_Offset.y
+    path: Collider2
+    classID: 61
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 35.3321381
+        inSlope: 173.196442
+        outSlope: 173.196442
+        tangentMode: 10
+      - time: .0833333358
+        value: 49.7651749
+        inSlope: 173.196442
+        outSlope: 173.196442
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    attribute: m_Size.y
+    path: Collider2
+    classID: 61
+    script: {fileID: 0}
   m_PPtrCurves:
   - curve:
     - time: 0
@@ -32,6 +86,24 @@ AnimationClip:
     m_Extent: {x: 0, y: 0, z: 0}
   m_ClipBindingConstant:
     genericBindings:
+    - path: 424679206
+      attribute: 1
+      script: {fileID: 0}
+      classID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - path: 2153334428
+      attribute: 1872933342
+      script: {fileID: 0}
+      classID: 61
+      customType: 0
+      isPPtrCurve: 0
+    - path: 2153334428
+      attribute: 2368279999
+      script: {fileID: 0}
+      classID: 61
+      customType: 0
+      isPPtrCurve: 0
     - path: 0
       attribute: 0
       script: {fileID: 0}
@@ -58,7 +130,102 @@ AnimationClip:
     m_KeepOriginalPositionXZ: 0
     m_HeightFromFeet: 0
     m_Mirror: 0
-  m_EditorCurves: []
+  m_EditorCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: -10
+        inSlope: 115.200005
+        outSlope: 115.200005
+        tangentMode: 10
+      - time: .0833333358
+        value: -.400000006
+        inSlope: 115.200005
+        outSlope: 115.200005
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    attribute: m_LocalPosition.x
+    path: Collider1
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 3.9000001
+        inSlope: 170.400009
+        outSlope: 170.400009
+        tangentMode: 10
+      - time: .0833333358
+        value: 18.1000004
+        inSlope: 170.400009
+        outSlope: 170.400009
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    attribute: m_LocalPosition.y
+    path: Collider1
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: .0833333358
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    attribute: m_LocalPosition.z
+    path: Collider1
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: -10.4239244
+        inSlope: 86.5982285
+        outSlope: 86.5982285
+        tangentMode: 10
+      - time: .0833333358
+        value: -3.20740509
+        inSlope: 86.5982285
+        outSlope: 86.5982285
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    attribute: m_Offset.y
+    path: Collider2
+    classID: 61
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 35.3321381
+        inSlope: 173.196442
+        outSlope: 173.196442
+        tangentMode: 10
+      - time: .0833333358
+        value: 49.7651749
+        inSlope: 173.196442
+        outSlope: 173.196442
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    attribute: m_Size.y
+    path: Collider2
+    classID: 61
+    script: {fileID: 0}
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0

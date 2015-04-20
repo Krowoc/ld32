@@ -1,14 +1,14 @@
 fileFormatVersion: 2
-guid: 53caa95e0f088da4b9e119483ce41098
-timeCreated: 1429487266
+guid: 30b078b0934306740b4ed96954d0e44d
+timeCreated: 1429537067
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Jump2_0
-    21300002: Jump2_1
-    21300004: Jump2_2
-    21300006: Jump2_3
-    21300008: Jump2_4
+    21300000: Jump4_0
+    21300002: Jump4_1
+    21300004: Jump4_2
+    21300006: Jump4_3
+    21300008: Jump4_4
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -54,7 +54,7 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: Jump2_0
+    - name: Jump4_0
       rect:
         serializedVersion: 2
         x: 0
@@ -64,7 +64,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Jump2_1
+    - name: Jump4_1
       rect:
         serializedVersion: 2
         x: 320
@@ -74,7 +74,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Jump2_2
+    - name: Jump4_2
       rect:
         serializedVersion: 2
         x: 640
@@ -84,7 +84,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Jump2_3
+    - name: Jump4_3
       rect:
         serializedVersion: 2
         x: 960
@@ -94,7 +94,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Jump2_4
+    - name: Jump4_4
       rect:
         serializedVersion: 2
         x: 1280

@@ -1,12 +1,12 @@
 fileFormatVersion: 2
-guid: 1b1c57d280be23247908f85dcd83f3d4
-timeCreated: 1429488063
+guid: 744990b4bcb9c2843b762ee773ca5a34
+timeCreated: 1429537157
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Jump3_0
-    21300002: Jump3_1
-    21300004: Jump3_2
+    21300000: krowocTitle_0
+    21300002: krowocTitle_1
+    21300004: krowocTitle_2
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -52,33 +52,33 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: Jump3_0
+    - name: krowocTitle_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 320
-        height: 700
+        width: 530
+        height: 475
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Jump3_1
+    - name: krowocTitle_1
       rect:
         serializedVersion: 2
-        x: 320
+        x: 530
         y: 0
-        width: 320
-        height: 700
+        width: 530
+        height: 475
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Jump3_2
+    - name: krowocTitle_2
       rect:
         serializedVersion: 2
-        x: 640
+        x: 1060
         y: 0
-        width: 320
-        height: 700
+        width: 530
+        height: 475
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
