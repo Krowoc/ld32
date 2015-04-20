@@ -11,7 +11,7 @@ public class PauseMenu : MonoBehaviour
 	pauseEnabled = false;
 	Time.timeScale = 1;
 	AudioListener.volume = 1;
-	UnityEngine.Cursor.visible = false;
+	//UnityEngine.Cursor.visible = false;
 	pauseMenu = pauseMenu.GetComponent<Canvas> ();
 	pauseMenu.enabled = false;
    }
@@ -31,7 +31,7 @@ public class PauseMenu : MonoBehaviour
 			pauseMenu.enabled = false;
 			Time.timeScale = 1;
 			AudioListener.volume = 1;
-			UnityEngine.Cursor.visible = false;			
+			//UnityEngine.Cursor.visible = false;			
 		}
 		
 		//else if game isn't paused, then pause it
@@ -40,8 +40,8 @@ public class PauseMenu : MonoBehaviour
 			pauseEnabled = true;
 			pauseMenu.enabled = true;
 			AudioListener.volume = 0;
-			Time.timeScale = 0.0000001f;
-			UnityEngine.Cursor.visible = true;
+			Time.timeScale = Globals.PauseSpeed;
+			//UnityEngine.Cursor.visible = true;
 		}
 	}
   }

@@ -890,7 +890,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 822edb7923e4aa4429e07e460739a684, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerScore: 0
   level0File: {fileID: 4900000, guid: 57156533f3cab6f40a00ded7f72f55a3, type: 3}
   level1File: {fileID: 4900000, guid: 5cd490e9578f7e94686433d0e1e51c6b, type: 3}
   level2File: {fileID: 4900000, guid: 13979804253ddcf439d9a27942c619c0, type: 3}

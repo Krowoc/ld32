@@ -23,6 +23,8 @@ public class Character : MonoBehaviour {
 	public float musicSlow = 0.75f;
 	public float musicTransitionSpeed = 2.0f;
 
+	public float score;
+
 	// Use this for initialization
 	void Start () {
 		animator = GetComponent<Animator>();
@@ -35,19 +37,22 @@ public class Character : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		if(Time.timeScale == 0.0000001f)
+		if(Time.timeScale == Globals.PauseSpeed)
 			return;
 
 		if(failed)
 			return;
 
-		if(Input.GetButtonDown("Jump"))
+		//Jumping
+		if(Input.GetButtonDown("Jump") || Input.GetAxis ("Vertical") > 0)
 		{
 			if(jumping == false && rolling == false)
 			{
 				StartCoroutine ("Jump");
 			}
 		}
+
+		//Rolling
 		if(Input.GetAxis ("Vertical") < 0)
 		{
 			if(jumping == false)
@@ -70,6 +75,8 @@ public class Character : MonoBehaviour {
 		{
 			music.pitch = Mathf.Lerp(music.pitch, musicNormal, musicTransitionSpeed * Time.deltaTime);
 		}
+
+		score = Globals.playerScore;
 	}
 
 	void OnTriggerEnter2D(Collider2D other)
@@ -77,6 +84,9 @@ public class Character : MonoBehaviour {
 		WordObject wo = other.GetComponent<WordObject>();
 		if(wo != null)
 		{
+			if(wo.damage > 0.0f)
+				Globals.playerScore += wo.damage;
+
 			mood += wo.damage;
 			mood = Mathf.Clamp (mood, minMood, maxMood);
 		}
