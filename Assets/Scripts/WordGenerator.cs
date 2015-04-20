@@ -5,6 +5,8 @@ using System.Collections.Generic;
 
 public class WordGenerator : MonoBehaviour {
 
+	public int playerScore = 0;
+
 	public TextAsset level0File;
 	public TextAsset level1File;
 	public TextAsset level2File;
@@ -25,16 +27,17 @@ public class WordGenerator : MonoBehaviour {
 
 	public int level = 0;
 	public int maxLevel = 3;
+	public float levelLength = 30.0f;
 
 	// Use this for initialization
 	void Start () 
 	{
 		levelList = new List<Level>();
 
-		levelList.Add (new Level(ParseWordFile(level0File), 0.9f, 3.0f, 10.0f));
-		levelList.Add (new Level(ParseWordFile(level1File), 1.2f, 2.5f, 10.0f));
-		levelList.Add (new Level(ParseWordFile(level2File), 1.5f, 2.0f, 10.0f));
-		levelList.Add (new Level(ParseWordFile(level3File), 1.8f, 1.0f, 10.0f));
+		levelList.Add (new Level(ParseWordFile(level0File), 0.9f, 3.0f, levelLength));
+		levelList.Add (new Level(ParseWordFile(level1File), 1.2f, 2.5f, levelLength));
+		levelList.Add (new Level(ParseWordFile(level2File), 1.5f, 2.0f, levelLength));
+		levelList.Add (new Level(ParseWordFile(level3File), 1.8f, 1.0f, levelLength));
 
 		currentLevel = levelList[0];
 
