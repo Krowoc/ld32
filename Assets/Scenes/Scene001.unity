@@ -283,6 +283,7 @@ MonoBehaviour:
   musicNormal: 1
   musicSlow: .75
   musicTransitionSpeed: 2
+  score: 0
 --- !u!50 &886813632
 Rigidbody2D:
   m_ObjectHideFlags: 0
