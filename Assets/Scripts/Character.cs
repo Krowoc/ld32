@@ -7,6 +7,9 @@ public class Character : MonoBehaviour {
 	public float maxMood = 1.0f;
 	public float minMood = 0.0f;
 	public float damageModifier = 6.0f;
+	public float tempMood = 0.7f;
+	public float tempMoodAdjust = 0.2f;
+	public float tempMoodAlign = 0.004f;
 	public bool failed = false;
 
 	public float jumpForce = 1.0f;
@@ -75,7 +78,11 @@ public class Character : MonoBehaviour {
 			Time.timeScale = 1.0f;
 		}
 
-		animator.SetFloat ("Mood", mood);
+		if(tempMood < mood)
+			tempMood += tempMoodAlign;
+		if(tempMood > mood)
+			tempMood -= tempMoodAlign;
+		animator.SetFloat ("Mood", tempMood);
 		animator.SetBool ("Jumping", jumping);
 
 		if(mood < 0.2f)
@@ -100,6 +107,13 @@ public class Character : MonoBehaviour {
 
 			mood += wo.damage / damageModifier;
 			mood = Mathf.Clamp (mood, minMood, maxMood);
+
+			if(wo.damage > 0)
+				tempMood = mood + tempMoodAdjust;
+			else if(wo.damage < 0)
+				tempMood = mood - tempMoodAdjust;
+			tempMood = Mathf.Clamp (tempMood, minMood, maxMood);
+
 		}
 
 		wo.Remove ();
