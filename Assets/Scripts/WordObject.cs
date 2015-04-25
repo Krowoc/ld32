@@ -13,6 +13,8 @@ public class WordObject : MonoBehaviour {
 
 	public TextMesh textMesh;
 
+	BoxCollider2D boxCollider;
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -37,12 +39,12 @@ public class WordObject : MonoBehaviour {
 
 		MeshRenderer mr = GetComponent<MeshRenderer>();
 
-		BoxCollider2D box = gameObject.AddComponent<BoxCollider2D>();
+		boxCollider = gameObject.AddComponent<BoxCollider2D>();
 		float boxBorder = 0.0f;
 
-		box.isTrigger = true;
-		box.offset = box.transform.InverseTransformPoint(mr.bounds.center);
-		box.size = box.transform.InverseTransformDirection(mr.bounds.size / (transform.lossyScale.magnitude / 1.7f)) + (Vector3.one * boxBorder);
+		boxCollider.isTrigger = true;
+		boxCollider.offset = boxCollider.transform.InverseTransformPoint(mr.bounds.center);
+		boxCollider.size = boxCollider.transform.InverseTransformDirection(mr.bounds.size / (transform.lossyScale.magnitude / 1.7f)) + (Vector3.one * boxBorder);
 	}
 
 	public void SetMovementVector(Vector3 v3)
@@ -57,6 +59,8 @@ public class WordObject : MonoBehaviour {
 
 	public void Remove()
 	{
+		boxCollider.enabled = false;
+
 		StartCoroutine ("FadeOut");
 	}
 

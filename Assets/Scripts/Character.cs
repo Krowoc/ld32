@@ -29,13 +29,17 @@ public class Character : MonoBehaviour {
 
 	public float score;
 
+	AudioSource audioSource;
+
 	// Use this for initialization
 	void Start () {
 		animator = GetComponent<Animator>();
 
 		groundPosition = transform.position.y;
 
-		music = GameObject.Find ("AudioSource").GetComponent<AudioSource>();
+		music = GameObject.Find ("Music").GetComponent<AudioSource>();
+
+		audioSource = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -99,6 +103,8 @@ public class Character : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
+		audioSource.Play ();
+
 		WordObject wo = other.GetComponent<WordObject>();
 		if(wo != null)
 		{

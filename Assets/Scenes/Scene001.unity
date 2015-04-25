@@ -193,6 +193,7 @@ GameObject:
   - 95: {fileID: 886813629}
   - 114: {fileID: 886813630}
   - 50: {fileID: 886813632}
+  - 82: {fileID: 886813631}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -272,6 +273,9 @@ MonoBehaviour:
   maxMood: 1
   minMood: 0
   damageModifier: 6
+  tempMood: .699999988
+  tempMoodAdjust: .200000003
+  tempMoodAlign: .00400000019
   failed: 0
   jumpForce: 2.79999995
   currentJumpForce: 0
@@ -285,6 +289,75 @@ MonoBehaviour:
   musicSlow: .75
   musicTransitionSpeed: 2
   score: 0
+--- !u!82 &886813631
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 886813626}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: ff870a067234bb449a41bc22ed05241e, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!50 &886813632
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -700,7 +773,7 @@ GameObject:
   - 4: {fileID: 1505562082}
   - 82: {fileID: 1505562081}
   m_Layer: 0
-  m_Name: AudioSource
+  m_Name: Music
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
