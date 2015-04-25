@@ -3,9 +3,13 @@ using System.Collections;
 
 public class Character : MonoBehaviour {
 
-	public float mood;
-	public float maxMood;
-	public float minMood;
+	public float mood = 0.7f;
+	public float maxMood = 1.0f;
+	public float minMood = 0.0f;
+	public float damageModifier = 6.0f;
+	public float tempMood = 0.7f;
+	public float tempMoodAdjust = 0.2f;
+	public float tempMoodAlign = 0.004f;
 	public bool failed = false;
 
 	public float jumpForce = 1.0f;
@@ -25,13 +29,17 @@ public class Character : MonoBehaviour {
 
 	public float score;
 
+	AudioSource audioSource;
+
 	// Use this for initialization
 	void Start () {
 		animator = GetComponent<Animator>();
 
 		groundPosition = transform.position.y;
 
-		music = GameObject.Find ("AudioSource").GetComponent<AudioSource>();
+		music = GameObject.Find ("Music").GetComponent<AudioSource>();
+
+		audioSource = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -64,10 +72,24 @@ public class Character : MonoBehaviour {
 		else 
 			animator.SetBool("Rolling", false);
 
-		animator.SetFloat ("Mood", mood);
+		if(Input.GetKeyDown (KeyCode.Period))
+		{
+			Time.timeScale = 4.0f;
+		}
+
+		if(Input.GetKeyUp (KeyCode.Period))
+		{
+			Time.timeScale = 1.0f;
+		}
+
+		if(tempMood < mood)
+			tempMood += tempMoodAlign;
+		if(tempMood > mood)
+			tempMood -= tempMoodAlign;
+		animator.SetFloat ("Mood", tempMood);
 		animator.SetBool ("Jumping", jumping);
 
-		if(mood < -2.0f)
+		if(mood < 0.2f)
 		{
 			music.pitch = Mathf.Lerp(music.pitch, musicSlow, musicTransitionSpeed * Time.deltaTime);
 		}
@@ -81,19 +103,28 @@ public class Character : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
+		audioSource.Play ();
+
 		WordObject wo = other.GetComponent<WordObject>();
 		if(wo != null)
 		{
 			if(wo.damage > 0.0f)
 				Globals.playerScore += wo.damage;
 
-			mood += wo.damage;
+			mood += wo.damage / damageModifier;
 			mood = Mathf.Clamp (mood, minMood, maxMood);
+
+			if(wo.damage > 0)
+				tempMood = mood + tempMoodAdjust;
+			else if(wo.damage < 0)
+				tempMood = mood - tempMoodAdjust;
+			tempMood = Mathf.Clamp (tempMood, minMood, maxMood);
+
 		}
 
 		wo.Remove ();
 
-		if(mood < -3.0f)
+		if(mood <= 0.0f)
 		{
 			StartCoroutine ("Fail");
 		}

@@ -8,7 +8,7 @@ public class GameOverMenu : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		score = GameObject.Find ("Score").GetComponent<Text>();
-		score.text = Globals.playerScore.ToString ();
+		score.text = (Globals.playerScore * 10).ToString ();
 	}
 	
 	// Update is called once per frame
