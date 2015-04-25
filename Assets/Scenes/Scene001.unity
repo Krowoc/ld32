@@ -268,9 +268,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd773b1e3ea51ec49a56d3dc5f4efe61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mood: 0
-  maxMood: 3
-  minMood: -4
+  mood: .699999988
+  maxMood: 1
+  minMood: 0
+  damageModifier: 6
   failed: 0
   jumpForce: 2.79999995
   currentJumpForce: 0
